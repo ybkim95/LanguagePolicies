@@ -3,7 +3,7 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 from utils.tf_util import limitGPUMemory, trainOnCPU
-from model_src.model import PolicyTranslationModel
+from model_src.newmodel import PolicyTranslationModel
 from utils.network import Network
 import tensorflow as tf
 import hashids
@@ -14,6 +14,8 @@ import numpy as np
 import shutil
 import os.path
 import sys
+
+# tf.debugging.enable_check_numerics
 
 # Location of the training data
 TRAIN_DATA      = "../GDrive/train.tfrecord"

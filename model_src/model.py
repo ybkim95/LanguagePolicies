@@ -17,9 +17,9 @@ class PolicyTranslationModel(tf.keras.Model):
 
         if od_path != "":                
             od_path    = pathlib.Path(od_path)/"saved_model" 
-            self.frcnn = tf.saved_model.load(str(od_path))
-            self.frcnn = self.frcnn.signatures['serving_default']
-            self.frcnn.trainable = False
+            self.yolo = tf.saved_model.load(str(od_path))
+            self.yolo = self.yolo.signatures['serving_default']
+            self.yolo.trainable = False
 
         self.embedding = GloveEmbeddings(file_path=glove_path)
         self.lng_gru   = tf.keras.layers.GRU(units=self.units)

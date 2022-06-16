@@ -2,6 +2,7 @@
 
 import tensorflow as tf
 import numpy as np
+from model_src.attention import TopDownAttention
 
 class BasisModel(tf.keras.layers.Layer):
     def __init__(self, dimensions, nfunctions, scale, **kwarg):
